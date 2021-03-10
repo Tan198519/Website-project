@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Employees
+{% endblock %}
+
+{% block body %}
+<div>
+    <a class="btn btn-warning" href="/employee">Create employee</a>
+</div>
+<br />
+<body>
+<div>
+    <form action="/employees" method="GET" class="search-form">
+        <label>Search employee:</label>
+            <input id="Date1" type="search" class="search-input" placeholder="Enter search for employees"
+                   size="45" minlength="4" maxlength="10"><br />
+        <label>Date from:</label>
+            <input id="Date2" type="search" class="search-input" placeholder="Date born"
+                   size="15" minlength="4" maxlength="10">
+        <label>to :</label>
+            <input id="search" type="search" class="search-input" placeholder="Date born"
+                   size="15" minlength="4" maxlength="10">
+        <button class="search-button">Search</button>
+    </form>
+</div>
+<table border="1" cellpadding="8" cellspacing="0">
+    <tr align="center" height="70">
+        <th style="background-color:#99ccff"><b>№</b></th>
+        <th style="background-color:#99ccff"><b>Name</b></th>
+        <th style="background-color:#99ccff"><b>Fullname</b></th>
+        <th style="background-color:#99ccff"><b>Date of birth</b></th>
+        <th style="background-color:#99ccff"><b>Amount</b></th>
+        <th style="background-color:#99ccff"><b>Department</b></th>
+        <th colspan="2" style="background-color:#99ccff"><b></b></th>
+    </tr>
+
+<div class="container">
+{{ articles.name }}
+    {% for el1 in articles %}
+    <p>
+    <tr>
+        <td align="center">{{ el1.id}}</td>
+        <td>{{ el1.name }}</td>
+        <td>{{ el1.fullname }}</td>
+        <td align="center">{{ el1.date_birth|datetimeformat('%d.%m.%Y') }}</td>
+        <td align="right">{{ el1.amount }}</td>
+        <td>{{ el1.dep}}</td>
+        <td><a href="/employees/{{ el1.id }}/del" class="btn btn-danger">Delete</a></td>
+        <td><a href="/employees/{{ el1.id }}/update" class="btn btn-success">Edit</a></td>
+    </tr>
+
+    </p>
+    {% endfor %}
+
+</div>
+</table>
+</body>
+
+{% endblock %}

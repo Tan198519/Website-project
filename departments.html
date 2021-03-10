@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Departments
+{% endblock %}
+
+{% block body %}
+<div>
+<a class="btn btn-warning" href="/department">Create department</a><br />
+</div>
+<body>
+
+<table border="1" cellpadding="8" cellspacing="0">
+    <tr align="center" height="70">
+        <th style="background-color:#99ccff"><b>№</b></th>
+        <th style="background-color:#99ccff"><b>Department name</b></th>
+        <th style="background-color:#99ccff"><b>Description</b></th>
+        <th style="background-color:#99ccff"><b>AVG salary</b></th>
+        <th style="background-color:#99ccff"><b>Date create</b></th>
+        <th colspan="2" style="background-color:#99ccff"><b></b></th>
+
+    </tr>
+
+<div class="container">
+{{ articles.title}}
+    {% for el in articles %}
+    <p>
+    <tr>
+        <td align="center">{{ el.id}}</td>
+        <td>{{ el.title}}</td>
+        <td>{{ el.text}}</td>
+        <td align="right">{{ el.amount}}</td>
+        <td align="center">{{ el.date.date()|datetimeformat('%d.%m.%Y') }}</td>
+        <td><a href="/departments/{{ el.id }}/del" class="btn btn-danger">Delete</a></td>
+        <td><a href="/departments/{{ el.id }}/update" class="btn btn-success">Edit</a></td>
+    </tr>
+
+    </p>
+    {% endfor %}
+
+</div>
+</table>
+</body>
+    <p></p>
+{% endblock %}

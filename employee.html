@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Create employee
+{% endblock %}
+
+
+{% block body %}
+<div class="container mt-5">
+    <h2>Create employee</h2>
+    <form method="post">
+        <input type="text" name="name" id="name" class="form-control" placeholder="Enter the name employee"><br/>
+        <input type="text" name="fullname" id="fullname" class="form-control" placeholder="Enter the fullname employee"><br/>
+        <input type="number" name="amount" id="amount" class="form-control" placeholder="Enter amount"><br/>
+        <input type="date" name="date_birth" id="date_birth" class="form-control" placeholder="Enter date_birth"><br/>
+           <a href="/employee1" class="btn btn-warning">Department</a>
+
+        <input type="submit" class="btn btn-success" value="OK">
+    </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Create employee
+{% endblock %}
+
+
+{% block body %}
+
+<div class="container mt-5">
+    <form method="post">
+        <select class="btn btn-secondary dropdown-toggle" id="dropdownMenuButton"
+                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                 <option class="dropdown">Select department:</option>
+                 {% for el1 in articles %}
+                 <option class="dropdown" value="{{el1.id}}">{{el1.id}} {{ el1.title }}</option>
+                 {% endfor %}
+        </select>
+            <input type="submit" class="btn btn-success" value="OK">
+    </form>
+</div>
+
+{% endblock %}

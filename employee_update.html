@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Update employee
+{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <h3>Update employee</h3>
+        <form action="/employees" method="post">
+        <input type="text" name="name" id="name" class="form-control" value="{{ articles1.name}}"
+               placeholder="Enter the name employee"><br />
+        <input type="text" name="fullname" id="fullname" class="form-control" value="{{ articles1.fullname}}"
+               placeholder="Enter the fullname employee"><br />
+        <input type="number" name="amount" id="amount" class="form-control" value="{{ articles1.amount}}"
+               placeholder="Enter amount"><br />
+        <input type="date" name="date_birth" id="date_birth" class="form-control" value="{{ articles1.date_birth}}"
+               placeholder="Enter date_birth"><br />
+                <select class="btn btn-secondary dropdown-toggle" id="dropdownMenuButton"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <option class="dropdown-item">Select department</option>
+                        <option class="dropdown-item">{{ articles1.dep_id }}{{ articles1.dep }}</option>
+                </select>
+        </form><br />
+        <form method="post">
+            <input type="submit" class="btn btn-success" value="Update">
+        </form>
+</div>
+{% endblock %}
