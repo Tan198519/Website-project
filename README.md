@@ -1,3 +1,27 @@
+language: python
+python:
+- "3.9.0"
+install:
+
+pip install -r requirements/dev.txt
+pip install codecov
+
+script:
+
+python -m unittest discover
+behave
+coverage erase
+coverage run test_webapp.py && coverage html
+pylint --output-format=text webapp.py
+
+after_success:
+
+codecov
+
+deploy:
+app: flask-travis-ci
+
+
 1.Introduction
 1.1	Purpose
 1.2	Project Scope and Product Features
