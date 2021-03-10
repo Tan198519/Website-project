@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.5/css/bootstrap-select.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.5/js/bootstrap-select.min.js"></script>
+    <style>
+        select { width: 300px; }
+    </style>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+
+
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+    <h5 class="my-0 mr-md-auto font-weight-normal">
+        <img class="logo"
+             src="https://s.dou.ua/CACHE/images/img/static/companies/epam_logo/b84ca0a480152a50ce7495c9c1442178.png"
+             srcset="https://s.dou.ua/CACHE/images/img/static/companies/epam_logo/f8ef6e4dd393048ab54b0e8ecc537930.png 1.1x"
+             alt="EPAM">
+    </h5>
+    <nav class="my-2 my-md-0 mr-md-3">
+        <a class="p-2 text-dark" href="/"><b>Main</b></a>
+        <a class="p-2 text-dark" href="/departments"><b>Departments</b></a>
+        <a class="p-2 text-dark" href="/employees"><b>Employees</b></a>
+        <a class="p-2 text-dark" href="/about"><b>About company</b></a>
+    </nav>
+</div>
+
+<div class="container">
+
+    {% block body %}{% endblock %}
+
+</div>
+</body>
+</html>
